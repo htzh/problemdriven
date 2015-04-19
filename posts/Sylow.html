@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Problem Driven Learning - The Sylow Theorems</title>
+        <link rel="stylesheet" type="text/css" href="../css/default.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <a href="../">Problem Driven Learning</a>
+            </div>
+            <div id="navigation">
+                <a href="../">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../archive.html">Archive</a>
+            </div>
+        </div>
+
+        <div id="content">
+            <h1>The Sylow Theorems</h1>
+
+            <div class="info">
+    
+</div>
+<div class="info">
+    
+    Tags: <a href="../tags/GroupTheory.html">GroupTheory</a>
+    
+</div>
+
+<p>The Sylow theorems seek to understand the structure of groups.</p>
+<p>I have a copy of the second edition of John B. Fraleigh’s “A First Course in Abstract Algebra” on hand, in which he emphasized over and over again:<br />“<em>Never underestimate a theorem which counts something.</em>”</p>
+<p>Curiously Fraleigh chose to not include proofs for the Sylow Theorems in his book and the chapter was starred to indicate that it was not required for a one-semester course. <a href="http://en.wikipedia.org/wiki/Sylow_theorems">Wikipedia</a> has proofs for the theorems but is rather hard to follow. In fact these very important theorems are neither tedious nor hard to follow and there is a very nice technique that can be repeatedly used to prove them. I will mostly follow Nathan Carter’s excellent <a href="http://www.amazon.com/Visual-Classroom-Resource-Materials-Problem/dp/088385757X">“Visual Group Theory”</a>, which taught me to understand these concepts in a very intuitive and accessible way.</p>
+<h2 id="normalizer">Normalizer</h2>
+<p>Lagrange Theorem tells us that the order of a subgroup <em>H</em> divides that of the group <em>G</em>. For Abelian groups we can extend the concept of division to the groups themselves: the cosets of <em>H</em> form a quotient group <em>G/H</em>, where the group operation is defined by multiplying elements from two cosets of <em>H</em> together using the standard operations of <em>G</em> to obtain another coset of <em>H</em>. For non-Abelian groups we can only form the quotient group this way if the subgroup <em>H</em> is <em>normal</em>, that is any left coset of <em>H</em> is also its right coset. In a sense we relax the requirement of commuting from the element level to <span class="math">\(g\cdot H=H\cdot g\)</span> instead. And indeed for a normal subgroup <em>H</em> we can define coset multiplication like the Abelian case:<span class="math">\[g_{1}H\cdot g_{2}H = (g_{1}\cdot g_{2})H\]</span></p>
+<p>Not all subgroups are normal. For an arbitrary subgroup <em>H</em>, we define its <em>normalizer</em> to be the union of all the left cosets of <em>H</em> that are also its right cosets: <span class="math">\(N_{G}(H)\equiv \{g\in G\mid gH=Hg\}\)</span>.</p>
+<p>It is easy to verify that <span class="math">\(N_{G}(H)\)</span> is a subgroup of G. We can build the quotient group <span class="math">\(N_{G}(H)/H\)</span> under coset multiplication as before. The order of the quotient group is noted as <span class="math">\([N_{G}(H):H]=\vert N_{G}(H)\vert/\vert H\vert\)</span>.</p>
+<h2 id="cauchys-theorem">Cauchy’s Theorem</h2>
+<p>Given a set <em>S</em> and a group <em>G</em> that acts on <em>S</em>, we say</p>
+<ul>
+<li><p>the <em>orbit</em> of an element <em>s</em> in the set is the subset that the group elements of <em>G</em> take it to: <span class="math">\(Orb(s) = \{x \in S \mid \exists g \in G, x=g \circ s\}\)</span>;</p></li>
+<li><p><em>s</em> is <em>stable</em> if it is not moved by any group element, that is the size of its orbit is 1;</p></li>
+<li><p>the <em>stabilizer</em> of an element <em>s</em> in the set is the subgroup of <em>G</em> whose elements do not change <em>s</em>: <span class="math">\(Stab(s) = \{g \in G \mid s=g \circ s\}\)</span></p></li>
+</ul>
+<p>It is easy to check that: every element in <em>Orb(s)</em> shares the same orbit; having identical orbits is an equivalence relationship therefore orbits form a partition of the set <em>S</em>; and <em>Stab(s)</em> is indeed a subgroup.</p>
+<p><strong>Theorem</strong> (<em>Orbit-Stabilizer Theorem</em>) The size of an element’s orbit times the size of its stabilizer is the size of the group: <span class="math">\[\vert  Orb(s)\vert \cdot \vert Stab(s)\vert = \vert G\vert\]</span></p>
+<p><em>Proof</em>. In the case of <span class="math">\(Orb(s)=1\)</span> we obviously have <span class="math">\(Stab(s)=\vert G\vert\)</span>. In general we can find a one-to-one mapping between <em>Orb(s)</em> and the left cosets of <em>Stab(s)</em> in <em>G</em>. Given any coset <span class="math">\(k\cdot Stab(s)\)</span> every element in the coset takes <em>s</em> to the same element <span class="math">\(k\circ s\)</span> in <em>Orb(s)</em>. Conversely, for any element <em>a</em> in <em>Orb(s)</em> we have a group element <em>k</em> that takes <em>s</em> to it. If <em>h</em> also takes <em>s</em> to <em>a</em> then <span class="math">\(h^{-1}\cdot k\)</span> is in <em>Stab(s)</em> and therefore <em>h</em> is in the coset <span class="math">\(k\cdot Stab(s)\)</span>.</p>
+<p><strong>Theorem</strong> If a group <em>G</em> of prime order <em>p</em> acts on a set <em>S</em>, then the order of <em>S</em> and the number of stable elements in <em>S</em> are congruent mod <em>p</em>.</p>
+<p><em>Proof</em>. As <em>p</em> is prime, the size of any orbit can only be 1 or <em>p</em>. The number of non-stable elements, i.e. those in orbits of size <em>p</em>, is a multiple of <em>p</em>.</p>
+<p><strong>Theorem</strong> (<em>Cauchy’s Theorem</em>) If <em>p</em> is a prime number that divides the order of the group <em>G</em>, then <em>G</em> has an element <em>g</em> of order <em>p</em>, and therefore a cyclic subgroup <span class="math">\(\langle g\rangle\)</span> of order <em>p</em>.</p>
+<p><em>Proof</em>. There exists one inverse element for the product of any tuple of <em>p–1</em> group elements. Therefore the set <em>S</em> of tuples of the form <span class="math">\(\left(a_{1}, a_{2},..., a_{p}\right)\)</span> that satisfies <span class="math">\(a_{1}\cdot a_{2}\cdot...\cdot a_{p}=e\)</span> has order <span class="math">\(\vert G\vert^{p-1}\)</span> . If we rotate any tuple in <em>S</em> we obtain another tuple in <em>S</em>, so rotations form the cyclic group <span class="math">\(C_{p}\)</span> that acts on <em>S</em>. Let <em>N</em> be the number of stable elements of <em>S</em> that are invariant under rotations, then by our last theorem we have:<span class="math">\[N\cong_{p}\vert S\vert\cong_{p}0\]</span>We know <span class="math">\(N\gt 0\)</span> since the tuple <span class="math">\((e, e, ..., e)\)</span> is a stable element of <em>S</em>, so <em>N</em> is a nonzero multiple of <em>p</em>. There exists another stable element of <em>S</em> and let its form be <span class="math">\((g, g, ..., g)\)</span>, then <span class="math">\(g^{p}=e\)</span> and <em>g</em> is the element we are looking for.</p>
+<p>In proving Cauchy’s Theorem we used a powerful technique that we shall keep returning to: we find a group that acts on a set and we then seek to characterize the order of the set based on the actions of the group.</p>
+<h2 id="first-sylow-theorem">First Sylow Theorem</h2>
+<p>A <em>p-group</em> (<em>p-subgroup</em>) is a group (subgroup) whose order <span class="math">\(p^{m}\)</span> is the power of some prime number <em>p</em>. We can easily expand the previous theorem to:</p>
+<p><strong>Theorem</strong> If a <em>p-group G</em> acts on a set <em>S</em>, then the order of <em>S</em> and the number of stable elements in <em>S</em> are congruent mod <em>p</em>.</p>
+<p><strong>Theorem</strong> If <em>H</em> is a <em>p-subgroup</em> of <em>G</em>, then <span class="math">\([N_{G}(H):H]\cong_{p}[G:H]\)</span>.</p>
+<p><em>Proof</em>. We consider the action of <em>H</em> on the set <em>S</em> of the left cosets of <em>H</em>. The stable elements of <em>S</em> are precisely those left cosets of <em>H</em> who are also right cosets, the union of which is the normalizer <span class="math">\(N_{G}(H)\)</span>. The number of the stable elements under <em>H</em> is therefore the number of its cosets in <span class="math">\(N_{G}(H)\)</span> which is <span class="math">\([N_{G}(H):H]\)</span>, while the order of <em>S</em> is the number of cosets of <em>H</em> in <em>G</em> which is <span class="math">\([G:H]\)</span>.</p>
+<p><strong>Theorem</strong> (<em>First Sylow Theorem</em>) If <em>G</em> is a group and <span class="math">\(p^{n}\)</span> is the highest power of a prime number <em>p</em> dividing <span class="math">\(\vert G\vert\)</span>, then there are subgroups of <em>G</em> of every order <span class="math">\(1, p, p^{2}, ..., p^{n}\)</span>. Also, every <em>p-subgroup</em> with fewer than <span class="math">\(p^{n}\)</span> elements is inside a larger <em>p-subgroup</em>.</p>
+<p>Proof. Subgroup of order 1 trivially exists: <em>{e}</em>. By Cauchy’s theorem subgroup of order <em>p</em> also exists. We shall prove that for every subgroup <em>H</em> of size <span class="math">\(p^{i}, i\lt n\)</span> we can construct another subgroup of <em>G</em> that contains <em>H</em> and that is <em>p</em> times as large. We note that <span class="math">\([G:H]=\vert G\vert/\vert H\vert\cong_{p}0\)</span>, therefore <span class="math">\([N_{G}(H):H]\cong_{p}0\)</span>. So <em>p</em> divides the order of the quotient group <span class="math">\(N_{G}(H)/H\)</span>. By Cauchy’s theorem there exists a subgroup of order <em>p</em> in the quotient group, whose elements are cosets of <em>H</em>. The union of these cosets is a subgroup of <em>G</em> that contains <em>H</em> with order <span class="math">\(p\vert H\vert=p^{i+1}\)</span>.</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
+</blockquote>
+
+        </div>
+        <div id="footer">
+            Site proudly generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </div>
+    </body>
+</html>
