@@ -29,13 +29,13 @@
 </div>
 <div class="info">
     
-    Tags: <a href="../tags/GroupTheory.html">GroupTheory</a>
+    Tags: <a href="../tags/Group%20Theory.html">Group Theory</a>
     
 </div>
 
 <p>The Sylow theorems seek to understand the structure of groups.</p>
 <p>I have a copy of the second edition of John B. Fraleigh’s “A First Course in Abstract Algebra” on hand, in which he emphasized over and over again:<br />“<em>Never underestimate a theorem which counts something.</em>”</p>
-<p>Curiously Fraleigh chose to not include proofs for the Sylow Theorems in his book and the chapter was starred to indicate that it was not required for a one-semester course. <a href="http://en.wikipedia.org/wiki/Sylow_theorems">Wikipedia</a> has proofs for the theorems but is rather hard to follow. In fact these very important theorems are neither tedious nor hard to follow and there is a very nice technique that can be repeatedly used to prove them. I will mostly follow Nathan Carter’s excellent <a href="http://www.amazon.com/Visual-Classroom-Resource-Materials-Problem/dp/088385757X">“Visual Group Theory”</a>, which taught me to understand these concepts in a very intuitive and accessible way.</p>
+<p>Curiously Fraleigh chose to not include proofs for the Sylow Theorems in his book and the chapter was starred to indicate that it was not required for a one-semester course. <a href="http://en.wikipedia.org/wiki/Sylow_theorems">Wikipedia</a> has proofs for the theorems but is rather hard to follow. In fact these very important theorems are neither tedious nor hard to follow and there is a very nice technique that can be repeatedly used to prove them. I will mostly follow Nathan Carter’s excellent <a href="http://www.amazon.com/Visual-Classroom-Resource-Materials-Problem/dp/088385757X">“Visual Group Theory”</a>, which taught me to comprehend these theorems in a very intuitive and accessible way.</p>
 <h2 id="normalizer">Normalizer</h2>
 <p>Lagrange Theorem tells us that the order of a subgroup <em>H</em> divides that of the group <em>G</em>. For Abelian groups we can extend the concept of division to the groups themselves: the cosets of <em>H</em> form a quotient group <em>G/H</em>, where the group operation is defined by multiplying elements from two cosets of <em>H</em> together using the standard operations of <em>G</em> to obtain another coset of <em>H</em>. For non-Abelian groups we can only form the quotient group this way if the subgroup <em>H</em> is <em>normal</em>, that is any left coset of <em>H</em> is also its right coset. In a sense we relax the requirement of commuting from the element level to <span class="math">\(g\cdot H=H\cdot g\)</span> instead. And indeed for a normal subgroup <em>H</em> we can define coset multiplication like the Abelian case:<span class="math">\[g_{1}H\cdot g_{2}H = (g_{1}\cdot g_{2})H\]</span></p>
 <p>Not all subgroups are normal. For an arbitrary subgroup <em>H</em>, we define its <em>normalizer</em> to be the union of all the left cosets of <em>H</em> that are also its right cosets: <span class="math">\(N_{G}(H)\equiv \{g\in G\mid gH=Hg\}\)</span>.</p>
